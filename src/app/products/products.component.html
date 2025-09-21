@@ -1,3 +1,11 @@
+<!-- Barra de búsqueda -->
+<div class="search-bar">
+  <p-iconfield>
+    <i class="pi pi-search"></i>
+    <input type="text" pInputText placeholder="Search products..." />
+  </p-iconfield>
+</div>
+
 <p-dataview #dv [value]="products()" [layout]="layout">
   <!-- Header con SelectButton -->
   <ng-template #header>

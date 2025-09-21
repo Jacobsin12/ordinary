@@ -1,11 +1,30 @@
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 2rem;
-  justify-content: center; /* CENTRA LOS PRODUCTOS EN DESKTOP */
-  margin-top: 4rem; /* ESPACIO PARA NO INTERFERIR CON EL NAV */
+/* --- Barra de búsqueda --- */
+.search-bar {
+  padding: 0.5rem 1rem;
+  background-color: var(--surface-card);
+  display: flex;
+  justify-content: center;
+  margin-top: 4rem; /* Desktop: separación del navbar */
 }
 
+.search-bar input {
+  width: 100%;
+  max-width: 400px;
+  padding: 0.6rem 1rem;
+  border-radius: 50px; /* más redondeado */
+  border: 1px solid var(--surface-border);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  font-size: 1rem;
+  transition: border 0.3s, box-shadow 0.3s;
+}
+
+.search-bar input:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  outline: none;
+}
+
+/* --- Productos --- */
 .product-item {
   position: relative;
   display: flex;
@@ -14,11 +33,13 @@
   border: 1px solid var(--surface-border);
   border-radius: var(--border-radius);
   background-color: var(--surface-card);
-  transition: box-shadow 0.2s;
+  transition: box-shadow 0.2s, transform 0.2s;
+  margin-bottom: 2rem; /* separación entre productos */
 }
 
 .product-item:hover {
   box-shadow: var(--surface-shadow-hover);
+  transform: translateY(-3px);
 }
 
 .product-image {
@@ -95,13 +116,41 @@
 
 .p-tag {
   position: absolute;
+  top: 5px;
+  left: 5px;
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
 }
 
-/* Media query for smaller screens */
+/* --- Media query para móviles --- */
 @media screen and (max-width: 576px) {
-  .grid {
-    grid-template-columns: 1fr;
-    margin-top: 0; /* Para móviles mantenemos original */
-    justify-content: initial;
+  .search-bar {
+    margin-top: 1rem;
+    padding: 0.5rem;
+  }
+
+  .search-bar input {
+    max-width: 100%;
+    font-size: 0.95rem;
+    padding: 0.5rem 0.8rem;
+  }
+
+  .buttons {
+    justify-content: flex-start;
+  }
+
+  .product-item {
+    margin-bottom: 1.5rem;
+  }
+}
+
+/* --- Media query para desktop --- */
+@media screen and (min-width: 768px) {
+  .search-bar {
+    margin-top: 4rem;
+  }
+
+  .product-item {
+    padding: 1.2rem;
   }
 }
