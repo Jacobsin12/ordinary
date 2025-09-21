@@ -1,0 +1,141 @@
+/* --- Mobile First: Navbar fijo abajo --- */
+nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around; /* ya distribuye, pero podemos usar gap */
+  align-items: center;
+  padding: 1rem 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(5px);
+  z-index: 1000;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 1rem 1rem 0 0;
+  
+  gap: 2rem; /* <-- separa más los iconos */
+}
+
+.nav-links ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  
+  gap: 2rem; /* <-- más espacio entre los <li> */
+}
+
+.nav-links li {
+  margin: 0;
+}
+
+.nav-links a,
+.nav-actions a,
+.cart-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #fff;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.nav-links a i,
+.nav-actions a i,
+.cart-icon i {
+  font-size: 1.8rem; /* íconos más grandes */
+  margin-bottom: 0.2rem;
+  color: #fff;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  transition: transform 0.2s ease, color 0.3s ease;
+}
+
+.nav-links a:hover i,
+.nav-actions a:hover i,
+.cart-icon:hover i {
+  color: #00c4ff;
+  transform: scale(1.2);
+}
+
+.nav-actions {
+  display: none;
+}
+
+
+/* --- Desktop (pantallas grandes) --- */
+@media (min-width: 768px) {
+  nav {
+    top: 0;
+    bottom: auto;
+    padding: 1rem 2rem;
+    justify-content: center; /* centrado */
+    background-color: transparent;
+    backdrop-filter: none;
+    border-top: none;
+    border-radius: 0;
+  }
+  
+  .nav-links {
+    flex-grow: 1;
+    text-align: center;
+  }
+
+  .nav-links ul {
+    display: inline-flex;
+    gap: 3rem; /* espacio más consistente entre botones */
+  }
+
+  .nav-links li {
+    margin: 0;
+  }
+  
+  .nav-text {
+    display: inline; /* mostrar texto en desktop */
+    font-weight: 600;
+    font-size: 1rem;
+    color: #333;
+    transition: color 0.3s ease, transform 0.2s ease;
+  }
+
+  .nav-links a i,
+  .nav-actions a i,
+  .cart-icon i {
+    display: none; /* ocultar íconos en desktop */
+  }
+
+  .nav-links a:hover .nav-text,
+  .nav-actions a:hover .nav-text {
+    color: #00c4ff;
+    transform: translateY(-2px);
+  }
+
+  .nav-links a,
+  .nav-actions a {
+    flex-direction: row;
+    gap: 0.5rem;
+  }
+  
+  .nav-actions {
+    display: flex;
+    gap: 2rem;
+  }
+
+  .cart-icon {
+    display: flex;
+    background: none;
+    border: none;
+    color: #333;
+    cursor: pointer;
+    align-items: center;
+  }
+
+  .active {
+    font-weight: bold;
+    border-bottom: 2px solid #00c4ff;
+    color: #00c4ff;
+  }
+}
