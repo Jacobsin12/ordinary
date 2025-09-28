@@ -16,7 +16,7 @@ jobs:
         run: npm ci
 
       - name: Build Angular
-        run: npm run build -- --configuration production
+        run: npm run build -- --configuration production --output-path=dist/ordinary
 
       - name: Deploy to Firebase
         uses: FirebaseExtended/action-hosting-deploy@v0
