@@ -1,0 +1,41 @@
+/* Contenedor principal para centrar la barra y agregar sombra */
+.search-container {
+  width: 100%;
+  max-width: 500px;
+  margin: 2rem auto; /* Centra el contenedor y agrega espacio */
+  position: relative;
+}
+
+/* Estilos para el campo de entrada */
+.search-container input {
+  width: 100%;
+  padding: 0.8rem 1rem 0.8rem 2.5rem; /* El padding izquierdo da espacio al ícono */
+  border: 1px solid var(--surface-border);
+  border-radius: 50px;
+  background-color: var(--surface-card);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Sombra más sutil */
+  transition: all 0.2s ease-in-out;
+  font-size: 1rem;
+}
+
+.search-container input:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  outline: none;
+}
+
+/* Estilo para el ícono de búsqueda */
+.search-icon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-color-secondary);
+}
+
+/* Opcional: mejora la experiencia en móviles */
+@media (max-width: 768px) {
+  .search-container {
+    margin: 1.5rem 1rem; /* Margen más ajustado para móviles */
+  }
+}

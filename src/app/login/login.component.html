@@ -1,1 +1,54 @@
-<p>login works!</p>
+<div class="login-container">
+  <!-- Columna izquierda con imagen -->
+  <div class="login-image">
+    <img src="https://your-image-url.com/product.jpg" alt="Product" />
+  </div>
+
+  <!-- Columna derecha con formulario -->
+  <div class="login-form">
+    <div class="logo">∞</div>
+    <h2>Get Started</h2>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam nonummy
+      nibh euismod tincidunt ut laoreet.
+    </p>
+
+    <form (ngSubmit)="onSubmit()">
+      <div class="input-group">
+        <i class="pi pi-envelope"></i>
+        <input type="email" placeholder="Email" [(ngModel)]="email" name="email" required />
+      </div>
+
+      <div class="input-group">
+        <i class="pi pi-lock"></i>
+        <input type="password" placeholder="Password" [(ngModel)]="password" name="password" required />
+      </div>
+
+      <div class="input-group">
+        <i class="pi pi-lock"></i>
+        <input type="password" placeholder="Confirm Password" [(ngModel)]="confirmPassword" name="confirmPassword" required />
+      </div>
+
+      <button type="submit" class="btn-submit">
+        Get Started →
+      </button>
+    </form>
+
+    <p class="signin-text">
+      Already have an account? <a href="#">Sign in</a>
+    </p>
+
+    <div class="divider"><span>or</span></div>
+
+    <div class="social-login">
+      <button class="btn-social google">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" alt="Google" />
+        Google
+      </button>
+      <button class="btn-social facebook">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/facebook/facebook-original.svg" alt="Facebook" />
+        Facebook
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,11 @@
+<div class="p-input-icon-right p-fluid search-container">
+  <i class="pi pi-search search-icon"></i>
+  <input 
+    type="text"
+    pInputText
+    placeholder="Search products..."
+    [(ngModel)]="searchTerm"
+    (input)="onSearchChange($event)"
+    class="p-inputtext p-component"
+  />
+</div>

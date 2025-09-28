@@ -5,8 +5,8 @@ import { SelectButtonModule } from 'primeng/selectbutton';
 import { TagModule } from 'primeng/tag';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { InputTextModule } from 'primeng/inputtext';
-import { IconFieldModule } from 'primeng/iconfield';
+import { LupaComponent } from '../Components/lupa/lupa.component';
+import { NavbarComponent } from '../navbar/navbar.component';
 
 interface Product {
   name: string;
@@ -20,18 +20,24 @@ interface Product {
 @Component({
   selector: 'app-products',
   standalone: true,
-  imports: [CommonModule, ButtonModule, DataViewModule, SelectButtonModule, TagModule, FormsModule, InputTextModule, IconFieldModule],
+  imports: [
+    CommonModule,
+    ButtonModule,
+    DataViewModule,
+    SelectButtonModule,
+    TagModule,
+    FormsModule,
+    LupaComponent,
+    NavbarComponent
+  ],
   templateUrl: './products.component.html',
   styleUrls: ['./products.component.css']
 })
 export class ProductsComponent {
   layout: 'list' | 'grid' = 'grid';
-  searchTerm: string = ''; // <-- Variable para el input de búsqueda
-  options = [
-    
-  ];
+  options = [];
+  searchTerm: string = ''; // <- lo que recibimos desde Lupa
 
-  // Lista original de productos
   allProducts: Product[] = [
     {
       name: 'The Ordinary Most Loved Set',
@@ -59,17 +65,18 @@ export class ProductsComponent {
     }
   ];
 
-  // Devuelve los productos filtrados según searchTerm
+  // Se filtran los productos con base en searchTerm
   products(): Product[] {
     if (!this.searchTerm.trim()) return this.allProducts;
 
     const term = this.searchTerm.toLowerCase();
     return this.allProducts.filter(p =>
-      p.name.toLowerCase().includes(term) || p.category.toLowerCase().includes(term)
+      p.name.toLowerCase().includes(term) ||
+      p.category.toLowerCase().includes(term)
     );
   }
 
-  // Método para definir el color del Tag según el inventario
+  // Define el color del Tag según inventario
   getSeverity(product: Product): string {
     switch (product.inventoryStatus) {
       case 'INSTOCK': return 'success';

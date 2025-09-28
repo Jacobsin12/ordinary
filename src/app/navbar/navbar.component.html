@@ -2,38 +2,38 @@
   <div class="nav-links">
     <ul>
       <li>
+        <a routerLink="/home" routerLinkActive="active" aria-label="Home">
+          <fa-icon [icon]="faHome" class="nav-icon"></fa-icon>
+          <span class="nav-text">Home</span>
+        </a>
+      </li>
+      <li>
         <a routerLink="/explore" routerLinkActive="active" aria-label="Explore">
-          <i class="pi pi-compass nav-icon"></i>
+          <fa-icon [icon]="faEye" class="nav-icon"></fa-icon>
           <span class="nav-text">Explore</span>
         </a>
       </li>
       <li>
-        <a routerLink="/products" routerLinkActive="active" aria-label="Products">
-          <i class="pi pi-box nav-icon"></i>
-          <span class="nav-text">Products</span>
+        <a routerLink="/saved" routerLinkActive="active" aria-label="Saved">
+          <fa-icon [icon]="faHeart" class="nav-icon"></fa-icon>
+          <span class="nav-text">Saved</span>
         </a>
       </li>
       <li>
-        <a routerLink="/blog" routerLinkActive="active" aria-label="Blog">
-          <i class="pi pi-pencil nav-icon"></i> <!-- Icono más moderno -->
-          <span class="nav-text">Blog</span>
-        </a>
-      </li>
-      <li>
-        <a routerLink="/contact" routerLinkActive="active" aria-label="Contact">
-          <i class="pi pi-envelope nav-icon"></i>
-          <span class="nav-text">Contact</span>
+        <a routerLink="/profile" routerLinkActive="active" aria-label="Profile">
+          <fa-icon [icon]="faUser" class="nav-icon"></fa-icon>
+          <span class="nav-text">Profile</span>
         </a>
       </li>
     </ul>
   </div>
   <div class="nav-actions">
     <a routerLink="/login" routerLinkActive="active" aria-label="Login">
-      <i class="pi pi-user nav-icon"></i>
+      <fa-icon [icon]="faUser" class="nav-icon"></fa-icon>
       <span class="nav-text">Login</span>
     </a>
     <button class="cart-icon" aria-label="Shopping Cart">
-      <i class="pi pi-shopping-cart"></i>
+      <fa-icon [icon]="faShoppingCart" class="nav-icon"></fa-icon>
     </button>
   </div>
 </nav>

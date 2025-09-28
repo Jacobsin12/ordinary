@@ -36,3 +36,22 @@ html, body {
   width: 100%;
   overflow-x: hidden;
 }
+
+/* Variables y reglas para el navbar fijo en móvil */
+:root {
+  --navbar-height: 4rem; /* Asegúrate de que este valor coincida con el CSS del navbar */
+}
+
+/* Esta regla se aplicará a todo el cuerpo de la página */
+@media (max-width: 767px) {
+  body {
+    padding-bottom: var(--navbar-height);
+  }
+}
+
+
+
+html {
+  color-scheme: light;
+}
+
